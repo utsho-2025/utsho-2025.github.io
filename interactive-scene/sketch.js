@@ -10,40 +10,52 @@ let dy = 4;
 let dx= 4;
 let cordX = 200;
 let cordY =200;
+let pSpeed = 50;
 let p1x= 0;
 let p1y = 10;
 let p2x = 690;
 let p2y = 10;
 
-function keyIsPressed(){
-  if (key=== 's'){
-    p1y = p1y-dx;
-    }
+function keyPressed() {
+  if (key === "s" && keyIsPressed && p1y!==windowHeight) {
+    p1y += pSpeed;
+
+  }
+  else if (key==='w'&& keyIsPressed&& p1y!==0){
+    p1y -=pSpeed;
+
+  }
+}
 function setup() {
-  createCanvas(700, 500);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function circ1(){
-  circle(350,250,70);
+  circle(windowWidth/2,windowHeight/2,70);
   fill("white");
 }
 function draw() {
-
-background(220);
-circ1();
-rect(p1x,p1y,10,80);
-keyIsPressed();
+  background(220);
+  circ1();
+  fill(0);
+  rect(p1x,p1y,10,80);
+  // keyIsPressed();
   
 
-  }
-  line(350,0,350,width);
+  
+  line(windowWidth/2,0,windowWidth/2,windowHeight);
+
   
 
 
   
-  rect(p2x,p2y,10,80)
-  ellipse(cordX,cordY,10,10)
+  rect(p2x,p2y,10,80);
+  ellipse(cordX,cordY,10,10);
   noFill();
+
+
+
+
   
   if (cordX>=width-10||cordX===20){
     dx = -dx;
@@ -52,8 +64,8 @@ keyIsPressed();
     dy = -dy;
     
   }
-  cordX+=dx
-  cordY+=dy
+  cordX+=dx;
+  cordY+=dy;
 
-  
 }
+

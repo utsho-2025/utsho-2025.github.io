@@ -13,21 +13,31 @@ let cordY =200;
 let pSpeed = 50;
 let p1x= 0;
 let p1y = 10;
-let p2x = 690;
+let p2x;
 let p2y = 10;
 
 function keyPressed() {
-  if (key === "s" && keyIsPressed && p1y!==windowHeight) {
-    p1y += pSpeed;
+  if (keyCode === 83 && keyIsPressed&& p2y!==0) {
+    p1y +=pSpeed;
+
 
   }
-  else if (key==='w'&& keyIsPressed&& p1y!==0){
+  else if (keyCode === 87 && keyIsPressed&& p2y!==0) {
     p1y -=pSpeed;
+
+  }
+  else if (keyCode === DOWN_ARROW && keyIsPressed&& p2y!==0) {
+    p2y +=pSpeed;
+
+  }
+  else if (keyCode === UP_ARROW && keyIsPressed&& p2y!==windowHeight){
+    p2y -=pSpeed;
 
   }
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  p2x = windowWidth-10;
 }
 
 function circ1(){
@@ -57,10 +67,10 @@ function draw() {
 
 
   
-  if (cordX>=width-10||cordX===20){
+  if (cordX>=windowWidth-10||cordX<10){
     dx = -dx;
   }
-  if (cordY>=height-10||cordY===20){
+  if (cordY>=windowHeight-10||cordY<10){
     dy = -dy;
     
   }

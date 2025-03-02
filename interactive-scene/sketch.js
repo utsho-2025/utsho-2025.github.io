@@ -11,7 +11,7 @@ let dx= 4;
 let cordX = 200;
 let cordY =200;
 let pSpeed = 50;
-let p1x= 0;
+let p1x = 0;
 let p1y = 10;
 let p2x;
 let p2y = 10;
@@ -48,8 +48,10 @@ function draw() {
   background(220);
   circ1();
   fill(0);
-  rect(p1x,p1y,10,80);
-  // keyIsPressed();
+  rect(p2x,p2y,10,80);//paddle 2
+  rect(p1x,p1y,10,80);//paddle 1
+
+  
   
 
   
@@ -59,7 +61,7 @@ function draw() {
 
 
   
-  rect(p2x,p2y,10,80);
+
   ellipse(cordX,cordY,10,10);
   noFill();
 
@@ -67,15 +69,28 @@ function draw() {
 
 
   
-  if (cordX>=windowWidth-10||cordX<10){
+  if (cordX>=windowWidth-5||cordX<6){
     dx = -dx;
+    
   }
-  if (cordY>=windowHeight-10||cordY<10){
+  if (cordY>=windowHeight-5||cordY<5){
     dy = -dy;
     
   }
-  cordX+=dx;
-  cordY+=dy;
+  // Paddle collision check for p1
+  if (cordX >= p1x && cordX <= p1x + 10 && cordY >= p1y && cordY <= p1y + 80) {
+    dx = -dx;
+    dy = map(cordY - (p1y + 40), -40, 40, -4, 4); // Angular bounce
+  }
+  
+  // Paddle collision check for p2
+  if (cordX >= p2x - 10 && cordX <= p2x && cordY >= p2y && cordY <= p2y + 80) {
+    dx = -dx;
+    dy = map(cordY - (p2y + 40), -40, 40, -4, 4); // Angular bounce
+  }
+  
+  cordX += dx;
+  cordY += dy;
 
 }
 

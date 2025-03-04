@@ -1,9 +1,9 @@
-// Project Title
-// Your Name
-// Date
+// interactive scene
+// Uthso Bhattacharjee
+// March 4th
 //
 // Extra for Experts:
-// - describe what you did to take this project "above and beyond"
+
 
 
 let dy = 4;
@@ -39,18 +39,19 @@ function keyPressed() {//controls for the paddles
 
   }
 }
- function mousePressed(){
+function mousePressed(){
   if (gameState==="start"){
     gameState = "play";
   }
- }
+}
 function showText(){
   textSize(25);
-  text(scoreVar1,windowWidth/2-50,10,windowWidth/2+10,windowHeight/2);
+  text(scoreVar1,width/2-50,50);
 }
 function showText2(){
   textSize(25);
-  text(scoreVar2,windowWidth/2+50,10,windowWidth/2-10,windowHeight/2)
+  text(scoreVar2,width/2+50,50);
+
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -61,7 +62,7 @@ function circ1(){//the midfield circle
   circle(windowWidth/2,windowHeight/2,100);
   fill("white");
 }
-function game() {
+function game() {// the main game function
   background(220);
   circ1();
   fill(0);
@@ -83,6 +84,7 @@ function game() {
   // Paddle collision check for p1
   if (cordX >= p1x && cordX <= p1x + 10 && cordY >= p1y && cordY <= p1y + 80) {
     dx = -dx;
+    
   }
   
   // Paddle collision check for p2
@@ -116,9 +118,10 @@ function draw(){
   // game();
 }
 function welcome(){
-  background(220);//why is this not wrking
+  background('red');//why is this not wrking
   textSize(70);
   textAlign(CENTER);
+  // textFont()
   text("Pong", windowWidth/2,windowHeight/2-50);
   textSize(35);
 

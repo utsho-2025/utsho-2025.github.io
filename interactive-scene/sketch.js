@@ -21,27 +21,36 @@ let scoreVar2 = 0;
 
 
 function keyPressed() {//controls for the paddles
-  if (keyCode === 83 && keyIsPressed&& p2y!==0) {
+  if (keyCode === 83 && keyIsPressed&& p1y!==0) {
     p1y +=pSpeed;
 
 
   }
-  else if (keyCode === 87 && keyIsPressed&& p2y!==0) {
+  else if (keyCode === 87 && keyIsPressed&& p1y!==0) {
     p1y -=pSpeed;
 
   }
-  else if (keyCode === DOWN_ARROW && keyIsPressed&& p2y!==0) {
+  else if (keyCode === DOWN_ARROW && keyIsPressed && p2y!==0) {
     p2y +=pSpeed;
 
   }
-  else if (keyCode === UP_ARROW && keyIsPressed&& p2y!==windowHeight){
+  else if (keyCode === UP_ARROW && keyIsPressed && p2y!==windowHeight){
     p2y -=pSpeed;
 
   }
 }
+ function mousePressed(){
+  if (gameState==="start"){
+    gameState = "play";
+  }
+ }
 function showText(){
-  textSize(50);
-  text(scoreVar1,0,0,windowWidth/2,windowHeight/2);
+  textSize(25);
+  text(scoreVar1,windowWidth/2-50,10,windowWidth/2+10,windowHeight/2);
+}
+function showText2(){
+  textSize(25);
+  text(scoreVar2,windowWidth/2+50,10,windowWidth/2-10,windowHeight/2)
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -52,31 +61,17 @@ function circ1(){//the midfield circle
   circle(windowWidth/2,windowHeight/2,100);
   fill("white");
 }
-function draw() {
+function game() {
   background(220);
   circ1();
   fill(0);
   rect(p2x,p2y,10,80);//paddle 2
   rect(p1x,p1y,10,80);//paddle 1
-
   showText();
-  
-
-  
+  showText2(); 
   line(windowWidth/2,0,windowWidth/2,windowHeight);//line going through the middle
-
-  
-
-
-  
-
   ellipse(cordX,cordY,10,10);//the ball itself
   noFill();
-
-
-
-
-  
   if (cordX>=windowWidth-5||cordX<6){//horizontal boundaries
     dx = -dx;
     
@@ -100,6 +95,39 @@ function draw() {
   //movement
   cordX += dx;
   cordY += dy;
+  
+  if (cordX>=windowWidth-5){//score function
+    scoreVar1+=1;
+    cordX = windowWidth/2;
+    cordY = windowHeight/2;
+  }
+  else if (cordX<5){
+    scoreVar2+=1;
+    cordX = windowWidth/2;
+    cordY = windowHeight/2;
+  }
+
+}
+function draw(){
+  if (gameState==="start"){
+    welcome();
+  }
+  if (gameState === "play"){
+    game();
+  }
+  // game();
+}
+function welcome(){
+  background(220);//why is this not wrking
+  textSize(70);
+  textAlign(CENTER);
+  text("Pong", windowWidth/2,windowHeight/2-50);
+  textSize(35);
+
+  text("Click anywhere to start",windowWidth/2,windowHeight/2);
+
+
+
 
 }
 

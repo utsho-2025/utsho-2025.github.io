@@ -83,13 +83,11 @@ function game() {
   // Paddle collision check for p1
   if (cordX >= p1x && cordX <= p1x + 10 && cordY >= p1y && cordY <= p1y + 80) {
     dx = -dx;
-    dy = map(cordY - (p1y + 40), -40, 40, -4, 4); // used for balls bounce if the ball hits the side of the paddles
   }
   
   // Paddle collision check for p2
   if (cordX >= p2x - 10 && cordX <= p2x && cordY >= p2y && cordY <= p2y + 80) {
     dx = -dx;
-    dy = map(cordY - (p2y + 40), -40, 40, -4, 4); // this remaps the dy variable so that if the ball hits the corner of the paddle it shoots off differently
   }
   
   //movement

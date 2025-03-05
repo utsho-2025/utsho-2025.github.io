@@ -1,8 +1,8 @@
 // interactive scene
-// Uthso Bhattacharjee
+// Utsho Bhattacharjee
 // March 4th
 //
-// Extra for Experts:
+// Extra for Experts: attempted to make a resizable game window but it is not cut out to be constantly resizable, only works on refreshes
 
 
 
@@ -84,6 +84,7 @@ function game() {// the main game function
   // Paddle collision check for p1
   if (cordX >= p1x && cordX <= p1x + 10 && cordY >= p1y && cordY <= p1y + 80) {
     dx = -dx;
+
     
   }
   
@@ -115,7 +116,7 @@ function draw(){
   if (gameState === "play"){
     game();
   }
-  // game();
+  
 }
 function welcome(){
   background('red');//why is this not wrking

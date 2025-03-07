@@ -2,7 +2,8 @@
 
 ## Demos
 - [links to stuff](link-to-folder)
-[bouncing balls](03-bouncing-balls)
+- [bouncing balls](03-bouncing-balls)
+- [Generative Art](04-art)
 
 ## Projects
 - [interactive scene](interactive-scene)

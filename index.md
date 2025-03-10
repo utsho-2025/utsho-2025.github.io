@@ -7,3 +7,4 @@
 
 ## Projects
 - [interactive scene](interactive-scene)
+- [arrays and object notation](arrays-and-obj-notation)

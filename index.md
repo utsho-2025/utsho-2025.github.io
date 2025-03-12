@@ -4,7 +4,10 @@
 - [links to stuff](link-to-folder)
 - [bouncing balls](03-bouncing-balls)
 - [Generative Art](04-art)
+- [Perlin Noise Demo](05-perlin)
+- [Terrain Generation](06-terrain)
 
 ## Projects
+- [tester file](tester-file)
 - [interactive scene](interactive-scene)
 - [arrays and object notation](arrays-and-obj-notation)

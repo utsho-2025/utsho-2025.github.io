@@ -7,14 +7,14 @@
 
 //I am still brainstorming and coming up with what i should do
 // snake game
-const boardwidth=10;
-const boardheight=10;
+const boardwidth=100;
+const boardheight=100;
 
 let gridSize = {
-  x : 200,
-  y: 200,
-  amountX : width/200,
-  amountY : height/200,
+  x : 100,
+  y: 100,
+  amountX : 100,
+  amountY : 100,
 };
 
 function setup() {
@@ -28,9 +28,9 @@ function draw() {
 
 
 function drawGrid(){
-  for (let x  =  0 ; x<gridSize.amountX;x++){
-    for (let y =0; y<gridSize.amountY;y++){
-      rect(x*gridSize.x, y*gridSize.y, gridSize.x, gridSize.y);
+  for (let x  =  0 ; x<gridSize.x;x++){
+    for (let y =0; y<gridSize.y;y++){
+      rect(x*gridSize.amountX, y*gridSize.amountY, gridSize.x, gridSize.y);
     }
   }
 }

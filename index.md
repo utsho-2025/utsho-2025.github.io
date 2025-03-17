@@ -6,6 +6,7 @@
 - [Generative Art](04-art)
 - [Perlin Noise Demo](05-perlin)
 - [Terrain Generation](06-terrain)
+- [Bubble object notation](07-bubbles)
 
 ## Projects
 - [tester file](tester-file)

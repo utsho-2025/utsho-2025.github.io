@@ -57,4 +57,13 @@ function drawStartScreen(){
 
   
 
+// }
+function winnerSnakes(){
+  snakes = [
+    {x:7, y: height/4, color:"blue"},
+    {x:7, y: height/2, color:"red"},
+    {x:7, y: height, color:"black"},
+  ];
+  winner = null;
+}
 }

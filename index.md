@@ -7,6 +7,7 @@
 - [Perlin Noise Demo](05-perlin)
 - [Terrain Generation](06-terrain)
 - [Bubble object notation](07-bubbles)
+- [2d array grid](08-grid)
 
 ## Projects
 - [tester file](tester-file)

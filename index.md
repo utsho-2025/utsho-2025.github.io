@@ -8,6 +8,8 @@
 - [Terrain Generation](06-terrain)
 - [Bubble object notation](07-bubbles)
 - [2d array grid](08-grid)
+- [Grid Neighbours](09-neighbours)
+- [Rectangle grid](10-rectangle-grid)
 
 ## Projects
 - [tester file](tester-file)

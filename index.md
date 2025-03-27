@@ -10,9 +10,11 @@
 - [2d array grid](08-grid)
 - [Grid Neighbours](09-neighbours)
 - [Rectangle grid](10-rectangle-grid)
- -[Game of Life](11-game-of-life)
+-[Game of Life](11-game-of-life)
+
 
 ## Projects
 - [tester file](tester-file)
 - [interactive scene](interactive-scene)
 - [arrays and object notation](arrays-and-obj-notation)
+- [independent learning](independent-learning)

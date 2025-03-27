@@ -1,69 +1,38 @@
-const boardwidth=100;
-const boardheight=100;
-let width  = 700;
-let height  = 600;
-let startScreen = "start";
-gamestate = "strt";
-let gameEnd = false;
-
-
-let gridSize = {
-  x : 17,
-  y: 15,
-  amountX : width/17,
-  amountY : height/15,
-};
-
+let cols = 6;
+let rows = 2;
+let gridSize = 20;
+let colors = [];
+// first of all, to understand grids, you have to understant arrays. this makes a grid come to life and makes it reactive
+//above, just so I can change colors in my grid, i made an empty array. this is used to I can add stuff to it in the future. 
+// this can be done as I plug i and j in the arrays and make it  so that it can go through every column and row to change colors
 function setup() {
   createCanvas(windowWidth, windowHeight);
-}
-function mousePressed(){
-  if (startScreen==="start"){
-    gameState = "strt";
-  }
-  if (startScreen === "play"){
-    
-    drawGrid();
-  }
-}
-function game(){
 
+  for (i = 0;  i<rows; i++){
+    colors[i]= [];
+    for (j = 0; j<cols;j++){
+    
+    colors[i][j] = random(255);
+    }
+  }
 }
 
 function draw() {
   background(220);
-  drawGrid();
-}
-
-
-function drawGrid(){
-  for (let x  =  0 ; x<gridSize.x;x++){
-    for (let y =0; y<gridSize.y;y++){
-      rect(x*gridSize.amountX, y*gridSize.amountY, gridSize.amountX, gridSize.amountY);
+  for (i = 0;  i<rows; i++){
+    for (j = 0; j<cols;j++){
+      let x = i*gridSize;
+      let y = j*gridSize;
+      fill(colors[i][j]);
+      rect(x,y,gridSize,gridSize);
+      
     }
   }
 }
-function drawStartScreen(){
-  background('red');
-  textSize(70);
-  textAlign(CENTER);
-  // textFont()
-  text("Pong", windowWidth/2,windowHeight/2-50);
-  textSize(35);
 
-  text("Click anywhere to start",windowWidth/2,windowHeight/2);
+//now how do I make a minesweeper from this 
+//step 1: make a grid
+//step2: make it interactive
+// step3: make a function that pushes bombs on random spots
+// do something so that if a tile is clickced, the tiles around it can indicate how close it is to a mine
 
-
-
-  
-
-// }
-function winnerSnakes(){
-  snakes = [
-    {x:7, y: height/4, color:"blue"},
-    {x:7, y: height/2, color:"red"},
-    {x:7, y: height, color:"black"},
-  ];
-  winner = null;
-}
-}

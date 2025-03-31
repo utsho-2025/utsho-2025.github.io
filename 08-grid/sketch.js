@@ -33,6 +33,9 @@ function keyPressed() {
   if (key === "r") {
     grid = generateRandomGrid(SQUARE_DIMENSIONS, SQUARE_DIMENSIONS);
   }
+  if (key === "e"){
+    grid = generateGrid(SQUARE_DIMENSIONS,SQUARE_DIMENSIONS); 
+  }
 }
 
 function displayGrid() {

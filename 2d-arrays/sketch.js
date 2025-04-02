@@ -29,6 +29,8 @@ function draw() {
   background(220);
 
   displayGrid();
+  shiftPositions();
+
 }
 
 function keyPressed() {
@@ -63,3 +65,6 @@ function generateGrid(cols, rows) {
   return newGrid;
 }
 
+function shiftPositions(){
+  
+}

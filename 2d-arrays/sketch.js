@@ -10,6 +10,16 @@
 let cellSize;
 const SQUARE_DIMENSIONS = 10;
 let grid;
+let thePlayer = {
+  x:0,
+  y:0,
+};
+const PLAYER = 1;
+let cols;
+let rows;
+let x;
+let y;
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -21,15 +31,17 @@ function setup() {
   else {
     cellSize = height / SQUARE_DIMENSIONS;
   }
-
   grid = generateGrid(SQUARE_DIMENSIONS, SQUARE_DIMENSIONS);
+  grid[thePlayer.y][thePlayer.x] = PLAYER;
+
+
 }
 
 function draw() {
   background(220);
 
   displayGrid();
-  shiftPositions();
+  // shiftPositions();
 
 }
 
@@ -66,5 +78,10 @@ function generateGrid(cols, rows) {
 }
 
 function shiftPositions(){
-  
+  if (x<cols&&y<rows&&grid[y][x] === 0){
+    let oldX = x;
+    let oldY = y;
+    
+
+  }
 }

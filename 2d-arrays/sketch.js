@@ -41,7 +41,7 @@ function draw() {
   background(220);
 
   displayGrid();
-  // shiftPositions();
+  shiftPositions();
 
 }
 
@@ -49,6 +49,22 @@ function keyPressed() {
 
   if (key ==="e"){
     grid = generateGrid(SQUARE_DIMENSIONS,SQUARE_DIMENSIONS);
+  }
+  if (key === "w") {
+    //move up
+    movePlayer(thePlayer.x, thePlayer.y - 1);
+  }
+  if (key === "s") {
+    //move down
+    movePlayer(thePlayer.x, thePlayer.y + 1);
+  }
+  if (key === "a") {
+    //move left
+    movePlayer(thePlayer.x - 1, thePlayer.y);
+  }
+  if (key === "d") {
+    //move right
+    movePlayer(thePlayer.x + 1, thePlayer.y);
   }
 }
 
@@ -77,11 +93,18 @@ function generateGrid(cols, rows) {
   return newGrid;
 }
 
-function shiftPositions(){
-  if (x<cols&&y<rows&&grid[y][x] === 0){
+function shiftPositions(x,y){
+  if (x >= 0 && x < cols && y >= 0 && y <= rows && grid[y][x] === 0){
     let oldX = x;
     let oldY = y;
     
+
+    thePlayer.x = x;
+    thePlayer.y = y;
+
+    grid[oldY][oldX] = 0;
+
+    grid[thePlayer.y][thePlayer.x] = PLAYER;
 
   }
 }

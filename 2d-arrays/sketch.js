@@ -51,16 +51,68 @@ function draw() {
   background(220);
 
   displayGrid();
+  // if (snakeId() && frameCount % fps === 0) {
+  //   grid = generateGrid();
+
+
+
+  // }
   moveSnake();
-  let x = frameCount % 100;
-  if (snakeId(x,y)){
-    frameRate(10);
+  // let x = frameCount % 100;
+  // if (snakeId(x,y)){
+  //   frameRate(10);
     
 
+  // }
+  function keyPressed(){
+    if ( key=== "d" && DIRECTIONSTATE !== "left"){
+      DIRECTIONSTATE = "right";
+  
+    }
+  
+    if ( key=== "a" && DIRECTIONSTATE !== "right"){
+      DIRECTIONSTATE = "left";
+  
+    }
+    
+    if ( key=== "w" && DIRECTIONSTATE !== "down"){
+      DIRECTIONSTATE = "up";
+  
+    }
+    
+    if ( key=== "s" && DIRECTIONSTATE !== "up"){
+      DIRECTIONSTATE = "down";
+  
+    }
+  
+  }
+  function moveSnake(){
+    let snakeHead = {...snake[0]};// added this so in future if i add something complex to my object it wont throw an error
+    if (DIRECTIONSTATE=== "right"){
+      snakeHead.x +=1;
+  
+    }
+    if (DIRECTIONSTATE=== "left"){
+      snakeHead.x -=1;
+  
+    }
+    if (DIRECTIONSTATE=== "up"){
+      snakeHead.y +=1;
+  
+    }
+    if (DIRECTIONSTATE=== "down"){
+      snakeHead.y -=1;
+  
+    } 
+    snake.pop();
+  
+    snake.unshift(snakeHead);
+  
+
+  
+  
   }
 }
-
-
 
 function displayGrid() {
   for (let y = 0; y < SQUARE_DIMENSIONS; y++) {
@@ -94,53 +146,8 @@ function generateGrid(cols, rows) {
 }
 
 
-function moveSnake(){
-  let snakeHead = {...snake[0]};// added this so in future if i add something complex to my object it wont throw an error
-  if (DIRECTIONSTATE=== "right"){
-    snakeHead.x +=1;
-
-  }
-  if (DIRECTIONSTATE=== "left"){
-    snakeHead.x -=1;
-
-  }
-  if (DIRECTIONSTATE=== "up"){
-    snakeHead.y +=1;
-
-  }
-  if (DIRECTIONSTATE=== "down"){
-    snakeHead.y -=1;
-
-  } 
-
-  snake.unshift(snakeHead);
-
-  snake.pop();
 
 
-}
-function keyPressed(){
-  if ( key=== "d" && DIRECTIONSTATE !== "left"){
-    DIRECTIONSTATE = "right";
-
-  }
-
-  if ( key=== "a" && DIRECTIONSTATE !== "right"){
-    DIRECTIONSTATE = "left";
-
-  }
-  
-  if ( key=== "w" && DIRECTIONSTATE !== "down"){
-    DIRECTIONSTATE = "up";
-
-  }
-  
-  if ( key=== "s" && DIRECTIONSTATE !== "up"){
-    DIRECTIONSTATE = "down";
-
-  }
-
-}
 function snakeId(x,y){
   for (let i = 0; i<snake.length; i++){
     if (snake[i].x===x&&snake[i].y ===y){

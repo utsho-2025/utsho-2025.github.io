@@ -13,6 +13,7 @@
 - [Game of Life](11-game-of-life)
 - [2d arrays assignment](2d-arrays)
 - [character grid](12-character-grid)
+- [Walker OOP](15-walker)
 
 ## Projects
 - [tester file](tester-file)

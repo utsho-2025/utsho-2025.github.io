@@ -14,6 +14,7 @@
 - [2d arrays assignment](2d-arrays)
 - [character grid](12-character-grid)
 - [Walker OOP](15-walker)
+- [Fireworks OOP](16-fireworks)
 
 ## Projects
 - [tester file](tester-file)

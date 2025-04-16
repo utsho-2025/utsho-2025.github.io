@@ -15,6 +15,8 @@
 - [character grid](12-character-grid)
 - [Walker OOP](15-walker)
 - [Fireworks OOP](16-fireworks)
+- [Connected nodes OOP demo](17-nodes)
+- [Trasnlate rotate demo](18-rotate)
 
 ## Projects
 - [tester file](tester-file)

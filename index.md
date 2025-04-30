@@ -17,6 +17,7 @@
 - [Fireworks OOP](16-fireworks)
 - [Connected nodes OOP demo](17-nodes)
 - [Trasnlate rotate demo](18-rotate)
+- [Local Storage](19-local-storage)
 
 ## Projects
 - [tester file](tester-file)

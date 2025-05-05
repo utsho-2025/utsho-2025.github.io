@@ -11,7 +11,7 @@
 - [Grid Neighbours](09-neighbours)
 - [Rectangle grid](10-rectangle-grid)
 - [Game of Life](11-game-of-life)
-- [2d arrays assignment](2d-arrays)
+
 - [character grid](12-character-grid)
 - [Walker OOP](15-walker)
 - [Fireworks OOP](16-fireworks)
@@ -23,3 +23,4 @@
 - [tester file](tester-file)
 - [interactive scene](interactive-scene)
 - [arrays and object notation](arrays-and-obj-notation)
+- [2d arrays assignment](2d-arrays)

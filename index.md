@@ -11,7 +11,6 @@
 - [Grid Neighbours](09-neighbours)
 - [Rectangle grid](10-rectangle-grid)
 - [Game of Life](11-game-of-life)
-
 - [character grid](12-character-grid)
 - [Walker OOP](15-walker)
 - [Fireworks OOP](16-fireworks)

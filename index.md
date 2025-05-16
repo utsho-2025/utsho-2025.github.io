@@ -17,6 +17,8 @@
 - [Connected nodes OOP demo](17-nodes)
 - [Trasnlate rotate demo](18-rotate)
 - [Local Storage](19-local-storage)
+- [2d Collide Demo](20-2d-collide)
+- [OOP Inheritance](21-inheritance)
 
 ## Projects
 - [tester file](tester-file)
